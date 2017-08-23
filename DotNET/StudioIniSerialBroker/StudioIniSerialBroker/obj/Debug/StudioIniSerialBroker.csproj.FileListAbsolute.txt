@@ -1,0 +1,5 @@
+C:\Users\dsikar\Documents\git\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\bin\Debug\StudioIniSerialBroker.exe.config
+C:\Users\dsikar\Documents\git\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\bin\Debug\StudioIniSerialBroker.exe
+C:\Users\dsikar\Documents\git\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\bin\Debug\StudioIniSerialBroker.pdb
+C:\Users\dsikar\Documents\git\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\obj\Debug\StudioIniSerialBroker.exe
+C:\Users\dsikar\Documents\git\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\obj\Debug\StudioIniSerialBroker.pdb
