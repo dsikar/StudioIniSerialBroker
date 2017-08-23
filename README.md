@@ -4,8 +4,7 @@ Broker serial connections between Kinect, Xbee and Arduino.
 
 ## C# code
 
-Apply [patch](https://www.microsoft.com/en-us/download/details.aspx?id=45105) to Windows OS if need be
-Run all comms plus algorithms, pass position/intensity to Arduino.
+Run all comms plus algorithms, pass position/intensity to Arduino. Note a [patch](https://www.microsoft.com/en-us/download/details.aspx?id=45105) may need applying if COM port is not recognised.
 
 ## Arduino code
 
