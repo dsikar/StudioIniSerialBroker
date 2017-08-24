@@ -4,7 +4,7 @@ Broker serial connections between Kinect, Xbee and Arduino.
 
 ## Sensors
 
-* Adafruit 9 DOF IMU [BNO05](5https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/overview)  
+* Adafruit 9 DOF IMU [BNO055](https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/overview)  
 * [Xbee bluetooth modules](http://docs.digi.com/plugins/servlet/mobile#content/view/2625924)  
 * Kinect v2
 
