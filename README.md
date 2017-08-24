@@ -2,6 +2,13 @@
 
 Broker serial connections between Kinect, Xbee and Arduino.
 
+## Software
+
+* Arduino 1.8.1
+* [Kinect V2 SDK](https://www.microsoft.com/en-gb/download/details.aspx?id=44561) - V2 requires 64 bit Windows 8 or higher.  
+* [Microsoft Visual Studio 2015] (https://www.visualstudio.com/downloads/)
+Note a [patch](https://www.microsoft.com/en-us/download/details.aspx?id=45105) may be required if COM ports are not recognised by Windows OS.
+
 ## Sensors
 
 * Adafruit 9 DOF IMU BNO055 [overview](https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/overview) and [github repository](https://github.com/adafruit/Adafruit_BNO055)  
@@ -10,7 +17,7 @@ Broker serial connections between Kinect, Xbee and Arduino.
 
 ## C# code
 
-Run Kinect, Xbee and Arduino comms plus algorithms, reading from Kinect and Xbee, then passing position/intensity to Arduino. Note a [patch](https://www.microsoft.com/en-us/download/details.aspx?id=45105) may need applying if COM ports are not recognised by Windows OS.
+Run Kinect, Xbee and Arduino comms plus algorithms, reading from Kinect and Xbee, then passing position/intensity to Arduino. 
 
 ## Arduino code
 
