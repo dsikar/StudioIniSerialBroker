@@ -2,9 +2,15 @@
 
 Broker serial connections between Kinect, Xbee and Arduino.
 
+## Sensors
+
+* Adafruit 9 DOF IMU [BNO05](5https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/overview)  
+* [Xbee bluetooth modules](http://docs.digi.com/plugins/servlet/mobile#content/view/2625924)  
+* Kinect v2
+
 ## C# code
 
-Run all comms plus algorithms, pass position/intensity to Arduino. Note a [patch](https://www.microsoft.com/en-us/download/details.aspx?id=45105) may need applying if COM port is not recognised.
+Run Kinect, Xbee and Arduino comms plus algorithms, reading from Kinect and Xbee, then passing position/intensity to Arduino. Note a [patch](https://www.microsoft.com/en-us/download/details.aspx?id=45105) may need applying if COM ports are not recognised by Windows OS.
 
 ## Arduino code
 
@@ -12,5 +18,7 @@ Receive and parse data, pass along to Arduino compatible PLC.
 
 ## TODO
 
+* Add Kinect BN005 and Xbee separate example code sub-directories.
 * Parse string at end of line character
 * Setup 3 Arduinos to simulate all Serial ports.
+
