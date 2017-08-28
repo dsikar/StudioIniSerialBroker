@@ -13,7 +13,7 @@ ESP8266WiFiMulti WiFiMulti;
 #include <utility/imumaths.h>
 
 /* Identifiers - Sensor number and string delimiter */
-const String IMU_ID = "BLOW"; // "BLOW" or "HAND"
+const String IMU_ID = "HAND"; // "BLOW" or "HAND"
 char chDelim = '|';
 String strPayload;
 
@@ -142,7 +142,7 @@ void myHttpReq(String strPayload)
       // configure target server and url
 
       /* TODO server ip as define */
-      String httpReq = "http://54.76.187.224/studio-ini.php?action=w&sensor=1&payload="+ strPayload;
+      String httpReq = "http://54.76.187.224/studio-ini.php?action=w&sensor=2&payload="+ strPayload;
 
       USE_SERIAL.println("*** Sending payload ***\n");
       USE_SERIAL.println(httpReq);
