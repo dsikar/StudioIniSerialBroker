@@ -27,6 +27,7 @@ void CheckSerial() {
   if(SBString.length() > 0) {
     Serial.print("Received data length() = ");
     Serial.println(SBString.length());
+    Serial.println(SBString);
     SBString = "";
   }
 }
