@@ -13,16 +13,14 @@ namespace SerialPortExample
 {
     class SerialPortProgram
     {
+        // NOTE - COM port is hardcoded - find correct number in Device Manager
+
         // Create the serial port with basic settings
-        private SerialPort port1 = new SerialPort("COM7", 9600, Parity.None, 8, StopBits.One);
+        private SerialPort port1 = new SerialPort("COM8", 9600, Parity.None, 8, StopBits.One);
 
         List<byte> bBuffer = new List<byte>();
         System.Text.ASCIIEncoding encoding = new ASCIIEncoding();
         string sBuffer = String.Empty;
-
-        // todo - emulate 2nd (Kinect) and 3rd (xbee) serial ports i.e.
-        // private SerialPort port2 = new SerialPort("COM7",
-        // 9600, Parity.None, 8, StopBits.One);
 
         [STAThread]
         static void Main(string[] args)
@@ -54,27 +52,16 @@ namespace SerialPortExample
         private void port_DataReceived(object sender,
           SerialDataReceivedEventArgs e)
         {
-            string strInitChar = "(";
-            string strTermChar = ")";
-            string strDelim = "|";
-            // Show all the incoming data in the port's buffer
-            // Console.WriteLine(port1.ReadExisting());
-
             // Buffer and process binary data
             while (port1.BytesToRead > 0)
                 bBuffer.Add((byte)port1.ReadByte());
 
-            // Buffer string data
-            // sBuffer += port1.ReadExisting();
             sBuffer = encoding.GetString(bBuffer.ToArray());
 
-            Console.WriteLine(sBuffer.Length);
             Console.WriteLine(sBuffer);
             bBuffer.Clear();
-            // ProcessBuffer(bBuffer);
-            string strData = strInitChar + httpData("1");
-            strData += strDelim + httpData("2");
-            strData += strTermChar;
+            string strData = httpData("1");
+            strData += "|" + httpData("2");
             port1.Write(strData);
         }
 

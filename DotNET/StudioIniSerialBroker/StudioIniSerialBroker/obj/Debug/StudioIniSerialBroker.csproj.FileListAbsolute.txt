@@ -8,3 +8,9 @@ C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\DotNET\StudioIniSeri
 C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\bin\Debug\StudioIniSerialBroker.pdb
 C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\obj\Debug\StudioIniSerialBroker.exe
 C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\obj\Debug\StudioIniSerialBroker.pdb
+C:\Users\Nassia\github\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\bin\Debug\StudioIniSerialBroker.exe.config
+C:\Users\Nassia\github\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\bin\Debug\StudioIniSerialBroker.exe
+C:\Users\Nassia\github\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\bin\Debug\StudioIniSerialBroker.pdb
+C:\Users\Nassia\github\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\obj\Debug\StudioIniSerialBroker.csprojResolveAssemblyReference.cache
+C:\Users\Nassia\github\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\obj\Debug\StudioIniSerialBroker.exe
+C:\Users\Nassia\github\StudioIniSerialBroker\DotNET\StudioIniSerialBroker\StudioIniSerialBroker\obj\Debug\StudioIniSerialBroker.pdb
