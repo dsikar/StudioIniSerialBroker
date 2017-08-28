@@ -16,6 +16,7 @@ namespace SerialPortExample
         // NOTE - COM port is hardcoded - find correct number in Device Manager
 
         // Create the serial port with basic settings
+        // If line 20 is changed, Build > Clean Solution, Build > Rebuild Solution, Start
         private SerialPort port1 = new SerialPort("COM8", 9600, Parity.None, 8, StopBits.One);
 
         List<byte> bBuffer = new List<byte>();
