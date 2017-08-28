@@ -33,7 +33,7 @@ String strPayload;
 */
 
 /* Set the delay between fresh samples */
-#define BNO055_SAMPLERATE_DELAY_MS (1000)
+#define BNO055_SAMPLERATE_DELAY_MS (100)
 
 Adafruit_BNO055 bno = Adafruit_BNO055();
 
@@ -78,6 +78,8 @@ void setup(void)
     USE_SERIAL.flush();
     delay(1000);
   }
+
+// change wifi here //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   /* TODO set network and password as defines */
   WiFiMulti.addAP("Makerversity_2G", "mak3rv3rs1ty");
