@@ -25,7 +25,5 @@ Receive and parse data, pass along to Arduino compatible PLC.
 
 ## TODO
 
-* Add Kinect BN005 and Xbee separate example code sub-directories.
-* Parse string at end of line character
-* Setup 3 Arduinos to simulate all Serial ports.
+* General tidy up - delete redundant code, rewrite docs, heads up, etc
 
