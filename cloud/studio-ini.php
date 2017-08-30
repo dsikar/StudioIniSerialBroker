@@ -18,7 +18,7 @@ if ($action == "r") {
 } elseif ($action == "w") {
         $payload = (isset($_GET['payload']) ? $_GET['payload'] : null);
         $cmd = "echo \"$payload\" >> /tmp/" . $sensor . "log.txt";
-        echo $cmd;
+        // echo $cmd;
         shell_exec($cmd);
 } else {
         echo "Malformed URL - action=(w|r) required.";
