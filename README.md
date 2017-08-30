@@ -1,6 +1,6 @@
 # Studio Ini Serial broker
 
-Broker serial connections between IMU BNO055 and PLC.
+Broker serial communication between IMU BNO055 and PLC.
 
 ```
                                 XXXXX
