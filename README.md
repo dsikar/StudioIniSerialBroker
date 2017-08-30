@@ -2,6 +2,30 @@
 
 Broker serial connections between IMU BNO055 and PLC.
 
+```
+                                XXXXX
+                             XXXX XX   XX XXXXX
+                          XXXXX X X     XXX  X
+                          X     XXX          XXXXX
+       +----------->   XXXX                      X
+       |              XX      studio-ini.php     X
+       |              XX X XX                XXXX
+       |                   X     XX+XXX      XX
+       |            +--->  XXXXXX  |  X    XXX
+       |            |              |   XXX
+       |            |              |
+       |            |              v
+   +---+---+    +---+---+    +-----+-----+
+   |NodeMCU|    |NodeMCU|    |PROCESSING |
+   +---+---+    +---+---+    |  SCRIPT   |
+       ^            ^        +-----+-----+
+       |            |              |
+       |            |              v
++------+----+ +-----+-----+      +-+-+
+|BNO055 HAND| |BNO055 BLOW|      |PLC|
++-----------+ +-----------+      +---+
+```
+
 ## Software
 
 * Arduino 1.8.1
@@ -9,9 +33,12 @@ Broker serial connections between IMU BNO055 and PLC.
 * Server configuration
 * Processing (maintained by Ken, not currently versioned)
 
-## Sensors
+## Sensor
 
 * Adafruit 9 DOF IMU BNO055 [overview](https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/overview) and [github repository](https://github.com/adafruit/Adafruit_BNO055)  
+
+## Wifi radio
+
 * NodeMCU - Arduino compatible ESP8266 wifi radio
 
 ## Arduino code
