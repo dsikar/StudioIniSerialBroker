@@ -47,10 +47,10 @@ Two BNO055 and NodeMCU setups are used, one running [**Arduino/imu_arduino_blow*
 
 # PHP code
 
-Read (Processing script relaying to PLC) and write (NodeMCU sketches) are serviced by **cloud/studio-ini.php**. For testing (29 and 30.08.2017) php code ran on Ubuntu 16.04 running Apache, the server itself running as a virtual machine on Amazon Web Services.
+Read (Processing script relaying to PLC) and write (NodeMCU sketches) are serviced by [**cloud/studio-ini.php**](https://github.com/dsikar/StudioIniSerialBroker/blob/master/cloud/studio-ini.php). For testing (29 and 30.08.2017) php code ran on Ubuntu 16.04 running Apache, the server itself running as a virtual machine on Amazon Web Services.
 
 # Server configuration
 
-Access to read/write rights to web user is done by running **cloud/access_log.sh** when webserver is set up.
+Access to read/write rights to web user is done by running [**cloud/access_log.sh**](https://github.com/dsikar/StudioIniSerialBroker/blob/master/cloud/access_log.sh) when webserver is set up.
 
 
