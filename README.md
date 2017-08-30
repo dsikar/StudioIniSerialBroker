@@ -26,7 +26,6 @@ Broker serial communication between IMU BNO055 and PLC.
                           |BNO055 HAND| |BNO055 BLOW|      |PLC|
                           +-----------+ +-----------+      +---+
 ```
-Diagram by [asciiflow](http://asciiflow.com).
 
 ## Software
 
