@@ -1,4 +1,4 @@
-# Studio Ini Serial broker
+# Studio Ini Serial Broker
 
 Broker serial communication between IMU BNO055 and PLC.
 
