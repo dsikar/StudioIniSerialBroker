@@ -3,27 +3,28 @@
 Broker serial communication between IMU BNO055 and PLC.
 
 ```
-                                XXXXX
-                             XXXX XX   XX XXXXX
-                          XXXXX X X     XXX  X
-                          X     XXX          XXXXX
-       +----------->   XXXX                      X
-       |              XX      studio-ini.php     X
-       |              XX X XX                XXXX
-       |                   X     XX+XXX      XX
-       |            +--->  XXXXXX  ^  X    XXX
-       |            |              |   XXX
-       |            |              |
-       |            |              v
-   +---+---+    +---+---+    +-----+-----+
-   |NodeMCU|    |NodeMCU|    |PROCESSING |
-   +---+---+    +---+---+    |  SCRIPT   |
-       |            |        +-----+-----+
-       |            |              |
-       v            v              v
-+------+----+ +-----+-----+      +-+-+
-|BNO055 HAND| |BNO055 BLOW|      |PLC|
-+-----------+ +-----------+      +---+
+                          
+                                                       XXXXX
+                                                       XXXX XX   XX XXXXX
+                                                    XXXXX X X     XXX  X
+                                                    X     XXX          XXXXX
+                                 +----------->   XXXX                      X
+                                 |              XX      studio-ini.php     X
+                                 |              XX X XX                XXXX
+                                 |                   X     XX+XXX      XX
+                                 |            +--->  XXXXXX  ^  X    XXX
+                                 |            |              |   XXX
+                                 |            |              |
+                                 |            |              v
+                             +---+---+    +---+---+    +-----+-----+
+                             |NodeMCU|    |NodeMCU|    |PROCESSING |
+                             +---+---+    +---+---+    |  SCRIPT   |
+                                 |            |        +-----+-----+
+                                 |            |              |
+                                 v            v              v
+                          +------+----+ +-----+-----+      +-+-+
+                          |BNO055 HAND| |BNO055 BLOW|      |PLC|
+                          +-----------+ +-----------+      +---+
 ```
 Diagram by [asciiflow](http://asciiflow.com).
 
