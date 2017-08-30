@@ -14,7 +14,7 @@ Broker serial communication between IMU BNO055 and PLC.
        |            +--->  XXXXXX  ^  X    XXX
        |            |              |   XXX
        |            |              |
-       |            |              |
+       |            |              v
    +---+---+    +---+---+    +-----+-----+
    |NodeMCU|    |NodeMCU|    |PROCESSING |
    +---+---+    +---+---+    |  SCRIPT   |
