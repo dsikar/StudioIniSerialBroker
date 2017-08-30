@@ -1,7 +1,0 @@
-C:\Users\dsikar\Documents\git\StudioIniSerialBroker\KinectSimpleGesture\KinectSimpleGesture\bin\Debug\KinectSimpleGesture.exe
-C:\Users\dsikar\Documents\git\StudioIniSerialBroker\KinectSimpleGesture\KinectSimpleGesture\bin\Debug\KinectSimpleGesture.pdb
-C:\Users\dsikar\Documents\git\StudioIniSerialBroker\KinectSimpleGesture\KinectSimpleGesture\bin\Debug\Microsoft.Kinect.dll
-C:\Users\dsikar\Documents\git\StudioIniSerialBroker\KinectSimpleGesture\KinectSimpleGesture\bin\Debug\Microsoft.Kinect.xml
-C:\Users\dsikar\Documents\git\StudioIniSerialBroker\KinectSimpleGesture\KinectSimpleGesture\obj\Debug\KinectSimpleGesture.csprojResolveAssemblyReference.cache
-C:\Users\dsikar\Documents\git\StudioIniSerialBroker\KinectSimpleGesture\KinectSimpleGesture\obj\Debug\KinectSimpleGesture.exe
-C:\Users\dsikar\Documents\git\StudioIniSerialBroker\KinectSimpleGesture\KinectSimpleGesture\obj\Debug\KinectSimpleGesture.pdb
