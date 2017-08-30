@@ -11,16 +11,16 @@ Broker serial communication between IMU BNO055 and PLC.
        |              XX      studio-ini.php     X
        |              XX X XX                XXXX
        |                   X     XX+XXX      XX
-       |            +--->  XXXXXX  |  X    XXX
+       |            +--->  XXXXXX  ^  X    XXX
        |            |              |   XXX
        |            |              |
-       |            |              v
+       |            |              |
    +---+---+    +---+---+    +-----+-----+
    |NodeMCU|    |NodeMCU|    |PROCESSING |
    +---+---+    +---+---+    |  SCRIPT   |
-       ^            ^        +-----+-----+
+       |            |        +-----+-----+
        |            |              |
-       |            |              v
+       v            v              v
 +------+----+ +-----+-----+      +-+-+
 |BNO055 HAND| |BNO055 BLOW|      |PLC|
 +-----------+ +-----------+      +---+
