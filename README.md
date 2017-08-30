@@ -29,8 +29,6 @@ Broker serial connections between IMU BNO055 and PLC.
 ## Software
 
 * Arduino 1.8.1
-* PHP
-* Server configuration
 * Processing (maintained by Ken, not currently versioned)
 
 ## Sensor
