@@ -43,7 +43,7 @@ Broker serial connections between IMU BNO055 and PLC.
 
 ## Arduino code
 
-Two BNO055 and NodeMCU setups are used, one running **Arduino/imu_arduino_blow**, the other **Arduino/imu_arduino_hand** sketch.
+Two BNO055 and NodeMCU setups are used, one running [**Arduino/imu_arduino_blow**](Arduino/imu_arduino_blow.ino), the other **Arduino/imu_arduino_hand** sketch.
 
 # PHP code
 
