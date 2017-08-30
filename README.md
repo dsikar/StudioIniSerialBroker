@@ -1,29 +1,54 @@
 # Studio Ini Serial broker
 
-Broker serial connections between Kinect, Xbee and Arduino.
+Broker serial connections between IMU BNO055 and PLC.
+
+```
+                                XXXXX
+                             XXXX XX   XX XXXXX
+                          XXXXX X X     XXX  X
+                          X     XXX          XXXXX
+       +----------->   XXXX                      X
+       |              XX      studio-ini.php     X
+       |              XX X XX                XXXX
+       |                   X     XX+XXX      XX
+       |            +--->  XXXXXX  |  X    XXX
+       |            |              |   XXX
+       |            |              |
+       |            |              v
+   +---+---+    +---+---+    +-----+-----+
+   |NodeMCU|    |NodeMCU|    |PROCESSING |
+   +---+---+    +---+---+    |  SCRIPT   |
+       ^            ^        +-----+-----+
+       |            |              |
+       |            |              v
++------+----+ +-----+-----+      +-+-+
+|BNO055 HAND| |BNO055 BLOW|      |PLC|
++-----------+ +-----------+      +---+
+```
 
 ## Software
 
 * Arduino 1.8.1
-* [Kinect V2 SDK](https://www.microsoft.com/en-gb/download/details.aspx?id=44561) - V2 requires 64 bit Windows 8 or higher.  
-* [Microsoft Visual Studio 2015] (https://www.visualstudio.com/downloads/)
-Note a [patch](https://www.microsoft.com/en-us/download/details.aspx?id=45105) may be required if COM ports are not recognised by Windows OS.
+* Processing (maintained by Ken, not currently versioned)
 
-## Sensors
+## Sensor
 
 * Adafruit 9 DOF IMU BNO055 [overview](https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/overview) and [github repository](https://github.com/adafruit/Adafruit_BNO055)  
-* Xbee bluetooth [modules](http://docs.digi.com/display/XBeeArduinoCodingPlatform/XBee+Arduino+Compatible+Coding+Platform) and [github repository](https://github.com/digidotcom/XBeeArduinoCodingPlatform/releases) 
-* Kinect v2 [gesture recognition example](http://pterneas.com/2014/01/27/implementing-kinect-gestures/)
 
-## C# code
+## Wifi radio
 
-Run Kinect, Xbee and Arduino comms plus algorithms, reading from Kinect and Xbee, then passing position/intensity to Arduino. 
+* NodeMCU - Arduino compatible ESP8266 wifi radio
 
 ## Arduino code
 
-Receive and parse data, pass along to Arduino compatible PLC.
+Two BNO055 and NodeMCU setups are used, one running [**Arduino/imu_arduino_blow**](https://github.com/dsikar/StudioIniSerialBroker/blob/master/Arduino/imu_arduino_blow/imu_arduino_blow.ino), the other [**Arduino/imu_arduino_hand**](https://github.com/dsikar/StudioIniSerialBroker/blob/master/Arduino/imu_arduino_blow/imu_arduino_blow.ino) sketch.
 
-## TODO
+# PHP code
 
-* General tidy up - delete redundant code, rewrite docs, heads up, etc
+Read (Processing script relaying to PLC) and write (NodeMCU sketches) are serviced by [**cloud/studio-ini.php**](https://github.com/dsikar/StudioIniSerialBroker/blob/master/cloud/studio-ini.php). For testing (29 and 30.08.2017) php code ran on Ubuntu 16.04 running Apache, the server itself running as a virtual machine on Amazon Web Services.
+
+# Server configuration
+
+Access to read/write rights to web user is done by running [**cloud/access_log.sh**](https://github.com/dsikar/StudioIniSerialBroker/blob/master/cloud/access_log.sh) when webserver is set up.
+
 
