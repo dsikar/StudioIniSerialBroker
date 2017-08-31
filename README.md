@@ -52,4 +52,6 @@ Read (Processing script relaying to PLC) and write (NodeMCU sketches) are servic
 
 Access to read/write rights to web user is done by running [**cloud/access_log.sh**](https://github.com/dsikar/StudioIniSerialBroker/blob/master/cloud/access_log.sh) when webserver is set up.
 
+## TODO
 
+* Add port-scanner buster i.e. grep phpMyAdmin requests, parse, block and report ip.
