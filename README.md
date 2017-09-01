@@ -82,5 +82,5 @@ For testing (29 and 30.08.2017) php code ran on Ubuntu 16.04 running Apache, the
 
 read/write web user accesss is set by running  
 [**cloud/access_log.sh**](https://github.com/dsikar/StudioIniSerialBroker/blob/master/cloud/access_log.sh)  
-when webserver is set up.
+when web server is set up.
 
