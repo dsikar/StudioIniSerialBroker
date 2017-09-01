@@ -45,7 +45,7 @@ Broker serial communication between IMU BNO055 and PLC.
 
 ## Wifi radio
 
-* NodeMCU - Arduino compatible ESP8266 wifi radio
+* [NodeMCU](http://www.ebay.co.uk/itm/NodeMcu-Lua-WIFI-Internet-Things-development-board-based-ESP8266-CP2102-module-/272041591472) - Arduino compatible ESP8266 wifi radio
 
 ## Arduino code
 
