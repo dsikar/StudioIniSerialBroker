@@ -30,6 +30,7 @@ Broker serial communication between IMU BNO055 and PLC.
 
 * Arduino - Sketches
 * DotNet/StudioIniSerialBroker - Serial broker desktop app (**not used**) - Processing sketch used instead
+* KinectConsole - Command line Kinect interface (**not used**)
 * cloud - PHP read/write broker and service user rights configuration script
 * docs - job spec
 
