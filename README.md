@@ -49,7 +49,7 @@ Broker serial communication between IMU BNO055 and PLC.
 ## Arduino code
 
 Two BNO055 and NodeMCU setups are used, one running  
-[**Arduino/imu_arduino_blow**]https://github.com/dsikar/StudioIniSerialBroker/blob/master/Arduino/imu_arduino_blow/imu_arduino_blow.ino), the other  
+[**Arduino/imu_arduino_blow**](https://github.com/dsikar/StudioIniSerialBroker/blob/master/Arduino/imu_arduino_blow/imu_arduino_blow.ino), the other  
 [**Arduino/imu_arduino_hand**](https://github.com/dsikar/StudioIniSerialBroker/blob/master/Arduino/imu_arduino_blow/imu_arduino_blow.ino) sketch.
 
 Note server ip address and wifi network and password details must be edited in the above sketches as required.
@@ -62,5 +62,6 @@ For testing (29 and 30.08.2017) php code ran on Ubuntu 16.04 running Apache, the
 
 # Server configuration
 
-Access to read/write rights to web user is done by running [**cloud/access_log.sh**](https://github.com/dsikar/StudioIniSerialBroker/blob/master/cloud/access_log.sh) when webserver is set up.
+Access to read/write rights to web user is done by running [**cloud/access_log.sh**](https://github.com/dsikar/StudioIniSerialBroker/blob/master/cloud/access_log.sh)  
+when webserver is set up.
 
