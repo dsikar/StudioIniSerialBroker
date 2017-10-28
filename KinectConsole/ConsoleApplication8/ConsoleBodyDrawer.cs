@@ -8,11 +8,62 @@ namespace ConsoleApplication8
 {
   class ConsoleBodyDrawer : IBodyDrawer
   {
+    private int[] iXY= { 0, 0, 0, 0 };
+    private int iTrack = 0;
+    private int iMax = 2;
+    private int idxLX = 0;
+    private int idxLY = 1;
+    private int idxRX = 2;
+    private int idxRY = 3;
+   
+    // CODE LIMITS
+    private int iCode1LowY = 20;
+    private int iCode1HighY = 30; 
+
+    enum MyEnum
+    {
+        CODE0,
+        CODE1,
+        CODE2,
+        CODE3,
+        CODE4
+    }
+
     public ConsoleBodyDrawer()
     {
       this.Color = ConsoleColor.Green;
     }
     public ConsoleColor Color { get; set; }
+
+    public int getCode(int[] iXY)
+    {
+        int iRetVal = (int)MyEnum.CODE0;
+        // CODE1
+        if (((iXY[idxLY] >= 20 && iXY[idxLY] <= 30) && (iXY[idxRY] >= 20 && iXY[idxRY] <= 30))
+                && ((iXY[idxLX] >= 50 && iXY[idxLX] <= 70) && (iXY[idxRX] >= 70 && iXY[idxRX] <= 90)))
+        {
+            return (int)MyEnum.CODE1;
+        }
+        // CODE2
+        if (((iXY[idxLY] >= 20 && iXY[idxLY] <= 30) && (iXY[idxRY] >= 20 && iXY[idxRY] <= 30))
+                && ((iXY[idxLX] >= 10 && iXY[idxLX] <= 50) && (iXY[idxRX] > 90 && iXY[idxRX] < 120)))
+        {
+            return (int)MyEnum.CODE2;
+        }
+        // CODE3
+        if (((iXY[idxLY] >= 0 && iXY[idxLY] <= 24) && (iXY[idxRY] > 24 && iXY[idxRY] <= 40))
+                && ((iXY[idxLX] >= 5 && iXY[idxLX] <= 70) && (iXY[idxRX] > 70 && iXY[idxRX] < 120)))
+        {
+            return (int)MyEnum.CODE4;
+        }
+        // CODE4
+        if (((iXY[idxLY] > 24 && iXY[idxLY] <= 40) && (iXY[idxRY] >= 0 && iXY[idxRY] <= 24))
+                && ((iXY[idxLX] >= 5 && iXY[idxLX] <= 70) && (iXY[idxRX] > 70 && iXY[idxRX] < 120)))
+        {
+            return (int)MyEnum.CODE3;
+        }
+            return iRetVal;
+    }
 
 #if ZERO
     public void DrawFrame(Body body, CoordinateMapper mapper,
@@ -38,12 +89,27 @@ namespace ConsoleApplication8
           if (!float.IsNegativeInfinity(depthPosition.X))
           {
             var consolePosition = MapDepthPointToConsoleSpace(depthPosition, depthFrameSize);
-
+            // Ajust index
+            if(iTrack > iMax)
+            {
+              iTrack = 0;
+            }
+            // Populate holders
+            iXY[iTrack] = consolePosition.Item1;
+            iXY[iTrack+1] = consolePosition.Item2;
+            String strPrintout = (iTrack == 0 ? "LeftHand" : "RightHand");
+            int iCode = getCode(iXY);
+            iTrack += 2;
+            // swapped  jointType.ToString().Substring(0,1) for strPrintout
             ConsoleEx.DrawAt(
               consolePosition.Item1,
               consolePosition.Item2,
-              jointType.ToString().Substring(0,1),
+              strPrintout,
               joint.TrackingState == TrackingState.Inferred ? ConsoleColor.Gray : this.Color);
+            // draw code
+            ConsoleEx.DrawAt(1, 1, "Code Left = " + iXY[idxLX].ToString() + ", " + iXY[idxLY].ToString(), ConsoleColor.Green);
+            ConsoleEx.DrawAt(1, 2, "Code Right = " + iXY[idxRX].ToString() + ", " + iXY[idxRY].ToString(), ConsoleColor.Green);
+            ConsoleEx.DrawAt(1, 3, "CODE = " + iCode.ToString(), ConsoleColor.Green);
           }
         }
       }
@@ -58,7 +124,7 @@ namespace ConsoleApplication8
     {
       if (!resized)
       {
-        Console.SetWindowSize(Constants.ConsoleWidth, Constants.ConsoleHeight);
+        Console.SetWindowSize(150, 50);
         resized = true;
       }
     }
@@ -76,22 +142,22 @@ namespace ConsoleApplication8
     }
     static JointType[] interestedJointTypes = 
     {
-      JointType.Head,
-      JointType.Neck,
-      JointType.ShoulderLeft,
-      JointType.ShoulderRight,
+      //JointType.Head,
+      //JointType.Neck,
+      //JointType.ShoulderLeft,
+      //JointType.ShoulderRight,
       JointType.HandLeft,
-      JointType.HandRight,
-      JointType.ElbowLeft,
-      JointType.ElbowRight,
-      JointType.HipLeft,
-      JointType.HipRight,
-      JointType.KneeLeft,
-      JointType.KneeRight,
-      JointType.AnkleLeft,
-      JointType.AnkleRight,
-      JointType.FootLeft,
-      JointType.FootRight
+      JointType.HandRight
+      //JointType.ElbowLeft,
+      //JointType.ElbowRight,
+      //JointType.HipLeft,
+      //JointType.HipRight,
+      //JointType.KneeLeft,
+      //JointType.KneeRight,
+      //JointType.AnkleLeft,
+      //JointType.AnkleRight,
+      //JointType.FootLeft,
+      //JointType.FootRight
     };
     static bool resized = false;
 

@@ -6,3 +6,9 @@ C:\Users\Nassia\github\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\b
 C:\Users\Nassia\github\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\obj\Debug\ConsoleApplication8.csprojResolveAssemblyReference.cache
 C:\Users\Nassia\github\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\obj\Debug\ConsoleApplication8.exe
 C:\Users\Nassia\github\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\obj\Debug\ConsoleApplication8.pdb
+C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\bin\Debug\ConsoleApplication8.exe.config
+C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\bin\Debug\ConsoleApplication8.exe
+C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\bin\Debug\ConsoleApplication8.pdb
+C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\obj\Debug\ConsoleApplication8.exe
+C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\obj\Debug\ConsoleApplication8.pdb
+C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\obj\Debug\ConsoleApplication8.csprojResolveAssemblyReference.cache

@@ -2,7 +2,7 @@
 {
   static class Constants
   {
-    public static readonly int ConsoleWidth = 180;
-    public static readonly int ConsoleHeight = 70;
+    public static readonly int ConsoleWidth = 150;
+    public static readonly int ConsoleHeight = 50;
   }
 }
