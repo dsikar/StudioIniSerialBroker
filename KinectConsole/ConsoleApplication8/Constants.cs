@@ -17,5 +17,8 @@
     public static readonly string HorizontalLine = "----------------------------------------------------------------------------------------------------------------------------------------------";
     // Number of white spaces = ConsoleMidX - 1
     public static readonly string VerticalLine = " |\n";
+
+    public static bool bPaused = true;
+    public static bool bColour = false;
   }
 }

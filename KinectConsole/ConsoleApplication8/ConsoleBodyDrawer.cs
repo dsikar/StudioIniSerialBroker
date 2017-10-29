@@ -16,9 +16,55 @@ namespace ConsoleApplication8
     private int idxRX = 2;
     private int idxRY = 3;
 
-    // Code tracking
-    private int[] i  = { 0, 0, 0, 0 };
-   
+     // Code tracking
+    public Stack<string> stack = new Stack<string>();
+    public List<string> strList = new List<string>()
+    {
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+    };
+
+    public int iStackCount = 10;
+    public int iListCount = 40;
+
     // CODE LIMITS
     private int iCode1LowY = 20;
     private int iCode1HighY = 30; 
@@ -34,75 +80,102 @@ namespace ConsoleApplication8
         CODE6
     }
 
-    public ConsoleBodyDrawer()
+    private void PrintStack(int iCode, int iLHX, int iLHY, int iRHX, int iRHY)
     {
+        // Pop and insert
+        int i;
+        for(i = 0; i < iListCount - 1; i++)
+        {
+            strList[i] = strList[i+1];
+        }
+        strList[i] = iCode.ToString() + iLHX.ToString() + iLHY.ToString() + iRHX.ToString() + iRHY.ToString();
+
+        for(int r = 0; r < iListCount; r++)
+        {
+            ConsoleEx.DrawAt(1, 4 + r, strList[r], ConsoleColor.Black);
+        }
+    }
+
+    public ConsoleBodyDrawer()
+    { 
       this.Color = ConsoleColor.Green;
     }
+
     public ConsoleColor Color { get; set; }
 
     public int getCode(int[] iXY)
     {
+        if(Constants.bColour == false)
+        {
+          Console.BackgroundColor = ConsoleColor.White;
+        }
         int iRetVal = (int)MyEnum.CODE0;
         // CODE1
-        if (((iXY[idxLY] >= 20 && iXY[idxLY] <= 30) && (iXY[idxRY] >= 20 && iXY[idxRY] <= 30))
-                && ((iXY[idxLX] >= 40 && iXY[idxLX] <= 90) && (iXY[idxRX] >= 40 && iXY[idxRX] <= 90)))
+//        if (((iXY[idxLY] >= 20 && iXY[idxLY] <= 30) && (iXY[idxRY] >= 20 && iXY[idxRY] <= 30))
+//                && ((iXY[idxLX] >= 40 && iXY[idxLX] <= 90) && (iXY[idxRX] >= 40 && iXY[idxRX] <= 90)))
+        if (((iXY[idxRY] - iXY[idxLY]  >= -5) && (iXY[idxRY] - iXY[idxLY]  < 20) )
+                && ((iXY[idxRX] - iXY[idxLX] >= 0) && (iXY[idxRX] - iXY[idxLX] < 20)))
         {
-            // Console.BackgroundColor = ConsoleColor.DarkBlue;
+            if(Constants.bColour == true)
+            {
+              Console.BackgroundColor = ConsoleColor.DarkBlue;
+            }
             return (int)MyEnum.CODE1;
         }
         // CODE2
-        if (((iXY[idxLY] >= 20 && iXY[idxLY] <= 30) && (iXY[idxRY] >= 20 && iXY[idxRY] <= 30))
-                && ((iXY[idxLX] >= 10 && iXY[idxLX] <= 50) && (iXY[idxRX] > 90 && iXY[idxRX] < 120)))
+        if (((iXY[idxRY] - iXY[idxLY]  >= -5) && (iXY[idxRY] - iXY[idxLY]  < 20) )
+                && ((iXY[idxRX] - iXY[idxLX] > 20) && (iXY[idxRX] - iXY[idxLX] < 100)))
         {
-            // Console.BackgroundColor = ConsoleColor.DarkCyan;
+            if(Constants.bColour == true)
+            {
+              Console.BackgroundColor = ConsoleColor.DarkCyan;
+            }
             return (int)MyEnum.CODE2;
         }
         // CODE4
-        if (((iXY[idxLY] >= 0 && iXY[idxLY] <= Constants.ConsoleMidY) && (iXY[idxRY] > Constants.ConsoleMidY && iXY[idxRY] <= 40))
-                && ((iXY[idxLX] >= 5 && iXY[idxLX] <= 70) && (iXY[idxRX] > 70 && iXY[idxRX] < 120)))
+        if (((iXY[idxRY] - iXY[idxLY]  > -5) && (iXY[idxRY] - iXY[idxLY]  < 40) )
+                && ((iXY[idxRX] - iXY[idxLX] > 0) && (iXY[idxRX] - iXY[idxLX] < 100)))
         {
-            // Console.BackgroundColor = ConsoleColor.Cyan;
+            if(Constants.bColour == true)
+            {
+              Console.BackgroundColor = ConsoleColor.Cyan;
+            }
             return (int)MyEnum.CODE4;
         }
         // CODE3
-        if (((iXY[idxLY] > Constants.ConsoleMidY && iXY[idxLY] <= Constants.ConsoleMaxY) && (iXY[idxRY] >= 0 && iXY[idxRY] <= Constants.ConsoleMidY))
-                && ((iXY[idxLX] >= 5 && iXY[idxLX] <= 70) && (iXY[idxRX] > 70 && iXY[idxRX] < 120)))
+        if (((iXY[idxRY] - iXY[idxLY]  < -5) && (iXY[idxRY] - iXY[idxLY]  > -40) )
+                && ((iXY[idxRX] - iXY[idxLX] > 0) && (iXY[idxRX] - iXY[idxLX] < 100)))
         {
-            // Console.BackgroundColor = ConsoleColor.Blue;
+            if(Constants.bColour == true)
+            {
+              Console.BackgroundColor = ConsoleColor.Blue;
+            }
             return (int)MyEnum.CODE3;
         }
         // CODE5 - Right hand over left hand
-        if (((iXY[idxRY] >= 0 && iXY[idxRY] <= Constants.ConsoleMidY) && (iXY[idxLY] > Constants.ConsoleMidY && iXY[idxLY] <= 40))
-                && ((iXY[idxRX] >= 5 && iXY[idxRX] <= 70) && (iXY[idxLX] > 70 && iXY[idxLX] < 120)))
+        if (((iXY[idxRY] - iXY[idxLY]  < -5) && (iXY[idxRY] - iXY[idxLY]  > -40) )
+                && ((iXY[idxRX] - iXY[idxLX] < -5) && (iXY[idxRX] - iXY[idxLX] > - 100)))
         {
-            // Console.BackgroundColor = ConsoleColor.DarkGreen;
+            if(Constants.bColour == true)
+            {
+              Console.BackgroundColor = ConsoleColor.Green;
+            }
             return (int)MyEnum.CODE5;
         }
         // CODE6 - left hand over right hand 
-        if (((iXY[idxRY] > Constants.ConsoleMidY && iXY[idxRY] <= 40) && (iXY[idxLY] >= 0 && iXY[idxLY] <= Constants.ConsoleMidY))
-                && ((iXY[idxRX] >= 5 && iXY[idxRX] <= 70) && (iXY[idxLX] > 70 && iXY[idxLX] < 120)))
+        if (((iXY[idxRY] - iXY[idxLY]  > -5) && (iXY[idxRY] - iXY[idxLY]  < 40) )
+                && ((iXY[idxRX] - iXY[idxLX] > -100) && (iXY[idxRX] - iXY[idxLX] < -5)))
         {
-            // Console.BackgroundColor = ConsoleColor.DarkGreen;
+            if(Constants.bColour == true)
+            {
+              Console.BackgroundColor = ConsoleColor.DarkGreen;
+            }
             return (int)MyEnum.CODE6;
         }
         return iRetVal;
     }
 
-    public void DrawLines()
-    {
-        ConsoleEx.DrawAt(1, Constants.ConsoleMidY, Constants.HorizontalLine, ConsoleColor.Green);
-        ConsoleEx.DrawAt(1, 1, Constants.VerticalLine, ConsoleColor.Green);
-        // DrawVerticalLine();
-    }
-
-    public void DrawVerticalLine()
-    {
-        for(int i = 1; i <= Constants.ConsoleMaxY; i++)
-        {
-            ConsoleEx.DrawAt(1, i, Constants.VerticalLine, ConsoleColor.Green);
-        }
-    }
-
+    
 #if ZERO
     public void DrawFrame(Body body, CoordinateMapper mapper,
       Rect depthFrameSize,
@@ -112,52 +185,55 @@ namespace ConsoleApplication8
       Rect depthFrameSize)
 #endif
     {
-      this.Resize();
-      
-
-      foreach (var jointType in interestedJointTypes)
+      if (Constants.bPaused == true)
       {
-        var joint = body.Joints[jointType];
-
-        if (joint.TrackingState != TrackingState.NotTracked)
+        this.Resize();
+        foreach (var jointType in interestedJointTypes)
         {
-          var cameraPosition = joint.Position;
+          var joint = body.Joints[jointType];
 
-          DepthSpacePoint depthPosition = mapper.MapCameraPointToDepthSpace(cameraPosition);
-
-          if (!float.IsNegativeInfinity(depthPosition.X))
+          if (joint.TrackingState != TrackingState.NotTracked)
           {
-            var consolePosition = MapDepthPointToConsoleSpace(depthPosition, depthFrameSize);
-            // Ajust index
-            if(iTrack > iMax)
+            var cameraPosition = joint.Position;
+
+            DepthSpacePoint depthPosition = mapper.MapCameraPointToDepthSpace(cameraPosition);
+
+            if (!float.IsNegativeInfinity(depthPosition.X))
             {
-              iTrack = 0;
+              var consolePosition = MapDepthPointToConsoleSpace(depthPosition, depthFrameSize);
+              // Ajust index
+              if(iTrack > iMax)
+              {
+                iTrack = 0;
+              }
+              // Populate holders
+              iXY[iTrack] = consolePosition.Item1;
+              iXY[iTrack+1] = consolePosition.Item2;
+              String strPrintout = (iTrack == 0 ? "LeftHand" : "RightHand");
+              int iCode = getCode(iXY);
+              iTrack += 2;
+              // draw lines - MAKES DISPLAY FLICKER TOO MUCH
+              // DrawLines();
+              // swapped  jointType.ToString().Substring(0,1) for strPrintout
+              ConsoleEx.DrawAt(
+                consolePosition.Item1,
+                consolePosition.Item2,
+                strPrintout,
+                joint.TrackingState == TrackingState.Inferred ? ConsoleColor.Black : ConsoleColor.Black);
+
+              // draw code
+              ConsoleEx.DrawAt(1, 1, "Code Left = " + iXY[idxLX].ToString() + ", " + iXY[idxLY].ToString(), ConsoleColor.Black);
+              ConsoleEx.DrawAt(1, 2, "Code Right = " + iXY[idxRX].ToString() + ", " + iXY[idxRY].ToString(), ConsoleColor.Black);
+              ConsoleEx.DrawAt(1, 3, "CODE = " + iCode.ToString(), ConsoleColor.Black);
+
+              PrintStack(iCode, iXY[idxLX], iXY[idxLY], iXY[idxRX], iXY[idxRY]);
+              // draw border lines
+              // Console.BackgroundColor = ConsoleColor.DarkRed;
             }
-            // Populate holders
-            iXY[iTrack] = consolePosition.Item1;
-            iXY[iTrack+1] = consolePosition.Item2;
-            String strPrintout = (iTrack == 0 ? "LeftHand" : "RightHand");
-            int iCode = getCode(iXY);
-            iTrack += 2;
-            // draw lines - MAKES DISPLAY FLICKER TOO MUCH
-            // DrawLines();
-            // swapped  jointType.ToString().Substring(0,1) for strPrintout
-            ConsoleEx.DrawAt(
-              consolePosition.Item1,
-              consolePosition.Item2,
-              strPrintout,
-              joint.TrackingState == TrackingState.Inferred ? ConsoleColor.Gray : this.Color);
-
-            // draw code
-            ConsoleEx.DrawAt(1, 1, "Code Left = " + iXY[idxLX].ToString() + ", " + iXY[idxLY].ToString(), ConsoleColor.Green);
-            ConsoleEx.DrawAt(1, 2, "Code Right = " + iXY[idxRX].ToString() + ", " + iXY[idxRY].ToString(), ConsoleColor.Green);
-            ConsoleEx.DrawAt(1, 3, "CODE = " + iCode.ToString(), ConsoleColor.Green);
-
-            // draw border lines
-            // Console.BackgroundColor = ConsoleColor.DarkRed;
           }
         }
       }
+
 #if ZERO
       if (isMain)
       {

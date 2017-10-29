@@ -25,17 +25,25 @@ namespace ConsoleApplication8
       c.GetSensor();
       c.OpenReader();
 
-      while (true)
-      {
-        var k = Console.ReadKey(true).Key;
-
-        if (k == ConsoleKey.X)
+        while (true)
         {
-          c.CloseReader();
-          c.ReleaseSensor();
-          break;
-        }
-      }
+            var k = Console.ReadKey(true).Key;
+
+            if (k == ConsoleKey.X)
+            {
+                c.CloseReader();
+                c.ReleaseSensor();
+                break;
+            }
+            if (k == ConsoleKey.P)
+            {
+                Constants.bPaused = (Constants.bPaused == true ? false : true);
+            }
+            if (k == ConsoleKey.C)
+            {
+            Constants.bColour = (Constants.bColour == true ? false : true);
+            }
+    }
     }
   }
 }

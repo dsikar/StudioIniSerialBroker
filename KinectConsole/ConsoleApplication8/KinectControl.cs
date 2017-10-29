@@ -57,9 +57,13 @@ namespace ConsoleApplication8
             this.bodies = new Body[frame.BodyCount];
           }
           frame.GetAndRefreshBodyData(this.bodies);
-
-          Console.Clear();
-
+          
+          // clear if running
+          if(Constants.bPaused == true)
+          {
+            Console.Clear();
+          }
+          
 #if ZERO
           bool first = true;
 #endif
