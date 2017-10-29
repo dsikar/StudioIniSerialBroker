@@ -1,0 +1,5 @@
+C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\bin\Debug\CBTPullRequests.exe.config
+C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\bin\Debug\CBTPullRequests.exe
+C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\bin\Debug\CBTPullRequests.pdb
+C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\obj\Debug\CBTPullRequests.exe
+C:\Users\danielsikar\Documents\GitHub\StudioIniSerialBroker\KinectConsole\ConsoleApplication8\obj\Debug\CBTPullRequests.pdb

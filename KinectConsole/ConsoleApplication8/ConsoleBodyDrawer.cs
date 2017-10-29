@@ -26,7 +26,9 @@ namespace ConsoleApplication8
         CODE1,
         CODE2,
         CODE3,
-        CODE4
+        CODE4,
+        CODE5,
+        CODE6
     }
 
     public ConsoleBodyDrawer()
@@ -40,7 +42,7 @@ namespace ConsoleApplication8
         int iRetVal = (int)MyEnum.CODE0;
         // CODE1
         if (((iXY[idxLY] >= 20 && iXY[idxLY] <= 30) && (iXY[idxRY] >= 20 && iXY[idxRY] <= 30))
-                && ((iXY[idxLX] >= 50 && iXY[idxLX] <= 70) && (iXY[idxRX] >= 70 && iXY[idxRX] <= 90)))
+                && ((iXY[idxLX] >= 40 && iXY[idxLX] <= 90) && (iXY[idxRX] >= 40 && iXY[idxRX] <= 90)))
         {
             return (int)MyEnum.CODE1;
         }
@@ -50,19 +52,46 @@ namespace ConsoleApplication8
         {
             return (int)MyEnum.CODE2;
         }
-        // CODE3
-        if (((iXY[idxLY] >= 0 && iXY[idxLY] <= 24) && (iXY[idxRY] > 24 && iXY[idxRY] <= 40))
+        // CODE4
+        if (((iXY[idxLY] >= 0 && iXY[idxLY] <= Constants.ConsoleMidY) && (iXY[idxRY] > Constants.ConsoleMidY && iXY[idxRY] <= 40))
                 && ((iXY[idxLX] >= 5 && iXY[idxLX] <= 70) && (iXY[idxRX] > 70 && iXY[idxRX] < 120)))
         {
             return (int)MyEnum.CODE4;
         }
-        // CODE4
-        if (((iXY[idxLY] > 24 && iXY[idxLY] <= 40) && (iXY[idxRY] >= 0 && iXY[idxRY] <= 24))
+        // CODE3
+        if (((iXY[idxLY] > Constants.ConsoleMidY && iXY[idxLY] <= Constants.ConsoleMaxY) && (iXY[idxRY] >= 0 && iXY[idxRY] <= Constants.ConsoleMidY))
                 && ((iXY[idxLX] >= 5 && iXY[idxLX] <= 70) && (iXY[idxRX] > 70 && iXY[idxRX] < 120)))
         {
             return (int)MyEnum.CODE3;
         }
-            return iRetVal;
+        // CODE5 - Right hand over left hand
+        if (((iXY[idxRY] >= 0 && iXY[idxRY] <= Constants.ConsoleMidY) && (iXY[idxLY] > Constants.ConsoleMidY && iXY[idxLY] <= 40))
+                && ((iXY[idxRX] >= 5 && iXY[idxRX] <= 70) && (iXY[idxLX] > 70 && iXY[idxLX] < 120)))
+        {
+        return (int)MyEnum.CODE5;
+        }
+        // CODE6 - left hand over right hand 
+        if (((iXY[idxRY] > Constants.ConsoleMidY && iXY[idxRY] <= 40) && (iXY[idxLY] >= 0 && iXY[idxLY] <= Constants.ConsoleMidY))
+                && ((iXY[idxRX] >= 5 && iXY[idxRX] <= 70) && (iXY[idxLX] > 70 && iXY[idxLX] < 120)))
+        {
+        return (int)MyEnum.CODE6;
+        }
+        return iRetVal;
+    }
+
+    public void DrawLines()
+    {
+        ConsoleEx.DrawAt(1, Constants.ConsoleMidY, Constants.HorizontalLine, ConsoleColor.Green);
+        ConsoleEx.DrawAt(1, 1, Constants.VerticalLine, ConsoleColor.Green);
+        // DrawVerticalLine();
+    }
+
+    public void DrawVerticalLine()
+    {
+        for(int i = 1; i <= Constants.ConsoleMaxY; i++)
+        {
+            ConsoleEx.DrawAt(1, i, Constants.VerticalLine, ConsoleColor.Green);
+        }
     }
 
 #if ZERO
@@ -100,16 +129,22 @@ namespace ConsoleApplication8
             String strPrintout = (iTrack == 0 ? "LeftHand" : "RightHand");
             int iCode = getCode(iXY);
             iTrack += 2;
+            // draw lines - MAKES DISPLAY FLICKER TOO MUCH
+            // DrawLines();
             // swapped  jointType.ToString().Substring(0,1) for strPrintout
             ConsoleEx.DrawAt(
               consolePosition.Item1,
               consolePosition.Item2,
               strPrintout,
               joint.TrackingState == TrackingState.Inferred ? ConsoleColor.Gray : this.Color);
+
             // draw code
             ConsoleEx.DrawAt(1, 1, "Code Left = " + iXY[idxLX].ToString() + ", " + iXY[idxLY].ToString(), ConsoleColor.Green);
             ConsoleEx.DrawAt(1, 2, "Code Right = " + iXY[idxRX].ToString() + ", " + iXY[idxRY].ToString(), ConsoleColor.Green);
             ConsoleEx.DrawAt(1, 3, "CODE = " + iCode.ToString(), ConsoleColor.Green);
+
+            // draw border lines
+            // Console.BackgroundColor = ConsoleColor.DarkRed;
           }
         }
       }

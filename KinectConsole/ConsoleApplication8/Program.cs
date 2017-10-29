@@ -18,7 +18,7 @@ namespace ConsoleApplication8
             // new SerialPortProgram();
             //Console.SetWindowSize(Constants.ConsoleWidth, Constants.ConsoleHeight);
             Console.SetWindowSize(Constants.ConsoleWidth, Constants.ConsoleHeight);
-            Console.Title = "Kinect Skeleton Console";
+            Console.Title = "CBT - PULL REQUESTS";
 
       KinectControl c = new KinectControl(() => new ConsoleBodyDrawer());
 
