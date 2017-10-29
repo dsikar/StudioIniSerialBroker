@@ -15,6 +15,9 @@ namespace ConsoleApplication8
     private int idxLY = 1;
     private int idxRX = 2;
     private int idxRY = 3;
+
+    // Code tracking
+    private int[] i  = { 0, 0, 0, 0 };
    
     // CODE LIMITS
     private int iCode1LowY = 20;
@@ -44,37 +47,43 @@ namespace ConsoleApplication8
         if (((iXY[idxLY] >= 20 && iXY[idxLY] <= 30) && (iXY[idxRY] >= 20 && iXY[idxRY] <= 30))
                 && ((iXY[idxLX] >= 40 && iXY[idxLX] <= 90) && (iXY[idxRX] >= 40 && iXY[idxRX] <= 90)))
         {
+            // Console.BackgroundColor = ConsoleColor.DarkBlue;
             return (int)MyEnum.CODE1;
         }
         // CODE2
         if (((iXY[idxLY] >= 20 && iXY[idxLY] <= 30) && (iXY[idxRY] >= 20 && iXY[idxRY] <= 30))
                 && ((iXY[idxLX] >= 10 && iXY[idxLX] <= 50) && (iXY[idxRX] > 90 && iXY[idxRX] < 120)))
         {
+            // Console.BackgroundColor = ConsoleColor.DarkCyan;
             return (int)MyEnum.CODE2;
         }
         // CODE4
         if (((iXY[idxLY] >= 0 && iXY[idxLY] <= Constants.ConsoleMidY) && (iXY[idxRY] > Constants.ConsoleMidY && iXY[idxRY] <= 40))
                 && ((iXY[idxLX] >= 5 && iXY[idxLX] <= 70) && (iXY[idxRX] > 70 && iXY[idxRX] < 120)))
         {
+            // Console.BackgroundColor = ConsoleColor.Cyan;
             return (int)MyEnum.CODE4;
         }
         // CODE3
         if (((iXY[idxLY] > Constants.ConsoleMidY && iXY[idxLY] <= Constants.ConsoleMaxY) && (iXY[idxRY] >= 0 && iXY[idxRY] <= Constants.ConsoleMidY))
                 && ((iXY[idxLX] >= 5 && iXY[idxLX] <= 70) && (iXY[idxRX] > 70 && iXY[idxRX] < 120)))
         {
+            // Console.BackgroundColor = ConsoleColor.Blue;
             return (int)MyEnum.CODE3;
         }
         // CODE5 - Right hand over left hand
         if (((iXY[idxRY] >= 0 && iXY[idxRY] <= Constants.ConsoleMidY) && (iXY[idxLY] > Constants.ConsoleMidY && iXY[idxLY] <= 40))
                 && ((iXY[idxRX] >= 5 && iXY[idxRX] <= 70) && (iXY[idxLX] > 70 && iXY[idxLX] < 120)))
         {
-        return (int)MyEnum.CODE5;
+            // Console.BackgroundColor = ConsoleColor.DarkGreen;
+            return (int)MyEnum.CODE5;
         }
         // CODE6 - left hand over right hand 
         if (((iXY[idxRY] > Constants.ConsoleMidY && iXY[idxRY] <= 40) && (iXY[idxLY] >= 0 && iXY[idxLY] <= Constants.ConsoleMidY))
                 && ((iXY[idxRX] >= 5 && iXY[idxRX] <= 70) && (iXY[idxLX] > 70 && iXY[idxLX] < 120)))
         {
-        return (int)MyEnum.CODE6;
+            // Console.BackgroundColor = ConsoleColor.DarkGreen;
+            return (int)MyEnum.CODE6;
         }
         return iRetVal;
     }
@@ -104,6 +113,7 @@ namespace ConsoleApplication8
 #endif
     {
       this.Resize();
+      
 
       foreach (var jointType in interestedJointTypes)
       {
@@ -159,9 +169,9 @@ namespace ConsoleApplication8
     {
       if (!resized)
       {
-        Console.SetWindowSize(150, 50);
+        Console.SetWindowSize(Constants.ConsoleWidth, Constants.ConsoleHeight);
         resized = true;
-      }
+      } 
     }
     static Tuple<int, int> MapDepthPointToConsoleSpace(DepthSpacePoint depthPoint,
       Rect depthFrameSize)

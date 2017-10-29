@@ -3,8 +3,8 @@
   static class Constants
   {
     // Dimensions
-    public static readonly int ConsoleWidth = 150;
-    public static readonly int ConsoleHeight = 50;
+    public static readonly int ConsoleWidth = 100; // 150; // 150
+    public static readonly int ConsoleHeight = 50; // 
 
     // Y Markers
     public static readonly int ConsoleMidY = 24;
